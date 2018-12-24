@@ -159,14 +159,12 @@ export default class Tabbar extends Component {
                 return this.props.tabs.map((tab, index) => {
                         return (
                     <Button transparent key={index} style={styles.iconView} onPress={() => this.props.stateFunc(tab)}>
-                <View
-                style={styles.tabButton}>
+            <View style={styles.tabButton}>
             <View style={styles.iconAndBadge}>
             <Image
                 resizeMode="contain"
                 style={{
-                    top: Platform.OS === 'ios' ? Dimensions.get('window').width * 0.01 : null ,
-                        width: tab.iconText ? Dimensions.get('window').width * 0.08 : Dimensions.get('window').width * 0.13,
+                    width: tab.iconText ? Dimensions.get('window').width * 0.08 : Dimensions.get('window').width * 0.13,
                         height: tab.iconText ? Dimensions.get('window').width * 0.08 : Dimensions.get('window').width * 0.13,
                         backgroundColor: 'rgba(0,0,0,0)'
                 }}
@@ -236,12 +234,14 @@ const styles = {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        alignSelf: "center",
         height: 50,
     },
     iconAndBadge: {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        alignSelf: "center",
     },
     badge: {
         minWidth : 16,
